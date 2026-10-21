@@ -1,0 +1,53 @@
+/* style.css */
+
+/* กำหนดฟอนต์หลักของทั้งเว็บไซต์ */
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #ffffff;
+}
+
+/* สีแดงหลักของแบรนด์ Pet Care */
+.btn-petcare {
+    background-color: #E31B23;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-petcare:hover {
+    background-color: #c4131a;
+    color: #ffffff;
+}
+
+.text-petcare {
+    color: #E31B23;
+}
+
+/* ปรับสไตล์ Input ช่องกรอกข้อมูลให้โค้งมนแบบ Pill */
+.form-control-custom {
+    border-radius: 50rem;
+    padding: 0.7rem 1.25rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+
+.form-control-custom:focus {
+    border-color: #E31B23;
+    box-shadow: 0 0 0 0.2rem rgba(227, 27, 35, 0.25);
+    background-color: #ffffff;
+}
+
+/* รูปภาพฝั่งซ้าย */
+.bg-login-image {
+    background-image: url('https://st.depositphotos.com/1004199/5153/i/450/depositphotos_51536413-stock-photo-dog-and-cat-together.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 250px;
+}
+
+/* สีของ Checkbox เมื่อถูกเลือก */
+.form-check-input:checked {
+    background-color: #E31B23;
+    border-color: #E31B23;
+}
+
