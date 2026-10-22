@@ -128,7 +128,7 @@ $pre_service = $_POST['service_id'] ?? $_GET['service'] ?? $_GET['service_id'] ?
                         
                         <!-- 1. เลือกสัตว์เลี้ยง (ดึงจากตาราง pets) -->
                         <div class="mb-4">
-                            <label class="form-label fw-bold"><i class="fas fa-dog text-petcare me-2"></i>เลือกสัตว์เลี้ยงของคุณ</label>
+                            <label class="form-label fw-bold"><i class="fa-solid fa-paw text-petcare me-2"></i>เลือกสัตว์เลี้ยงของคุณ</label>
                             <div class="input-group">
                                 <select name="pet_id" class="form-select form-control-custom" required>
                                     <option value="" selected disabled>-- เลือกสัตว์เลี้ยง --</option>
@@ -144,7 +144,7 @@ $pre_service = $_POST['service_id'] ?? $_GET['service'] ?? $_GET['service_id'] ?
 
                         <!-- 2. เลือกบริการ (ดึงจากตาราง services) -->
                         <div class="mb-4">
-                            <label class="form-label fw-bold"><i class="fas fa-concierge-bell text-petcare me-2"></i>เลือกบริการ</label>
+                            <label class="form-label fw-bold"><i class="fa-solid fa-bath text-petcare me-2"></i>เลือกบริการ</label>
                             <select name="service_id" class="form-select form-control-custom" required>
                                 <option value="" selected disabled>-- เลือกบริการ --</option>
                                 <?php foreach ($services as $s): ?>

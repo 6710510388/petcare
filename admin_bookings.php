@@ -47,7 +47,12 @@ include 'config/admin_header.php';
                         <?= csrf_field() ?>
                         <input type="hidden" name="id" value="<?= $b['booking_id'] ?>">
                         <div class="col-md-1 fw-bold text-petcare">#BK-<?= sprintf('%04d', $b['booking_id']) ?></div>
-                        <div class="col-md-2"><?= e($b['uname']) ?></div>
+                        <div class="col-md-2">
+                            <div><?= e($b['uname']) ?></div>
+                            <?php if (trim((string)($b['note'] ?? '')) !== ''): ?>
+                                <div class="small text-muted mt-1"><strong>หมายเหตุ:</strong> <?= nl2br(e($b['note'])) ?></div>
+                            <?php endif; ?>
+                        </div>
                         <div class="col-md-2">
                             <div class="fw-semibold"><?= e($b['pname']) ?></div>
                             <div class="small text-muted"><?= e($b['sname']) ?></div>

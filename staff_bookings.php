@@ -62,7 +62,7 @@ $list = rows($conn, "SELECT b.*, u.name uname, u.phone uphone, p.name pname, p.t
                      JOIN services s ON s.service_id = b.service_id
                      LEFT JOIN staffs assigned ON assigned.staff_id = b.staff_id
                      WHERE (? = '' OR b.booking_date = ?) AND (? = '' OR b.status = ?)
-                     ORDER BY b.booking_date DESC, b.booking_time", "ssss", $date, $date, $status, $status);
+                     ORDER BY b.booking_id DESC", "ssss", $date, $date, $status, $status);
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -181,6 +181,9 @@ $list = rows($conn, "SELECT b.*, u.name uname, u.phone uphone, p.name pname, p.t
                                 <td>
                                     <span class="badge bg-light text-dark border"><?= e($b['sname']) ?></span>
                                     <div class="small text-petcare fw-bold">฿<?= number_format($b['price']) ?></div>
+                                    <?php if (trim((string)($b['note'] ?? '')) !== ''): ?>
+                                        <div class="small text-muted mt-1"><strong>หมายเหตุ:</strong> <?= nl2br(e($b['note'])) ?></div>
+                                    <?php endif; ?>
                                 </td>
                                 <td>
                                     <span class="badge <?= badge($b['status']) ?> rounded-pill px-3 py-2"><?= e($b['status']) ?></span>

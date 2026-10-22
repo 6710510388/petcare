@@ -121,6 +121,9 @@ $tabs = ['all' => '', 'pending' => 'Pending', 'confirmed' => 'Confirmed', 'compl
                                             <span class="badge <?= badge($b['status']) ?> rounded-pill px-3"><?= $b['status'] ?></span>
                                         </div>
                                         <p class="text-muted small mb-1"><strong>บริการ:</strong> <?= e($b['service_name']) ?></p>
+                                        <?php if (trim((string)($b['note'] ?? '')) !== ''): ?>
+                                            <p class="text-muted small mb-1"><strong>หมายเหตุ:</strong> <?= nl2br(e($b['note'])) ?></p>
+                                        <?php endif; ?>
                                         <p class="text-muted small mb-0"><i class="far fa-calendar-alt me-1"></i> <?= thai_date($b['booking_date']) ?> | <i class="far fa-clock me-1"></i> <?= e($b['booking_time']) ?> น.</p>
                                     </div>
                                 </div>
